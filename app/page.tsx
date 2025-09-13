@@ -5,6 +5,7 @@ import { isValidIranPhone, normalizeIranPhone } from "../lib/phone";
 import { useRouter } from "next/navigation";
 import { AuthUser } from "../types/user";
 import { useState } from "react";
+import { saveUserToStorage } from "@/lib/auth";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function LoginPage() {
         picture: r.picture.large,
         phone: normalizeIranPhone(phone),
       };
-      localStorage.setItem("auth_user", JSON.stringify(user));
+      saveUserToStorage(user);
       router.push("/dashboard");
     } catch (err) {
       setError("خطا در برقراری ارتباط با سرور");

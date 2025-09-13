@@ -20,7 +20,7 @@ export const Button: React.FC<Props> = ({
       {...rest}
       disabled={isDisabled}
       className={clsx(
-        "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-shadow focus-visible:ring-2 focus-visible:ring-offset-1",
+        "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-shadow focus-visible:ring-2 focus-visible:ring-offset-1 cursor-pointer",
         "bg-sky-500 text-white hover:bg-sky-600 disabled:opacity-60",
         className
       )}
