@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  direction: rtl;
+  --primary: #0ea5e9;
+  --bg: #0f172a;
+}
+
+body {
+  @apply bg-white text-slate-800;
+}
+
+/* focus-visible utility improvements */
+:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.4);
+  outline-offset: 2px;
+}
+
+:root input {
+  direction: ltr;
+}
