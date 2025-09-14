@@ -85,10 +85,6 @@ yarn start
 
 By default, the app runs at [http://localhost:3000](http://localhost:3000).
 
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
-<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/main/docs/public/img/etc/powered-by-vercel.svg" alt="Powered By Vercel" />
-</a>
-
 ## License
 
 MIT
