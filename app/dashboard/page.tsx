@@ -20,6 +20,7 @@ export default function DashboardPage() {
             width={80}
             height={80}
             alt={`تصویر ${user.name}`}
+            unoptimized
           />
         </div>
         <div className="flex-1">
