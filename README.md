@@ -10,6 +10,10 @@ This project demonstrates a simple client-side authentication flow using **Next.
 - Dashboard with welcome message and logout functionality
 - Client-side only authentication state
 
+## Live Demo
+
+👉 [https://nextjs-auth.vercel.app](https://nextjs-auth.vercel.app)
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org/) (App Router)
@@ -80,6 +84,10 @@ yarn start
 ```
 
 By default, the app runs at [http://localhost:3000](http://localhost:3000).
+
+<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
+<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/main/docs/public/img/etc/powered-by-vercel.svg" alt="Powered By Vercel" />
+</a>
 
 ## License
 
