@@ -29,10 +29,10 @@ Make sure you have the following installed:
 
 ```bash
 # with HTTPS
-git clone https://github.com/dev_ansar/nextjs-auth.git
+git clone https://github.com/DevAnsar/nextjs-auth.git
 
 # or with SSH
-git clone git@github.com:dev_ansar/nextjs-auth.git
+git clone git@github.com:DevAnsar/nextjs-auth.git
 
 cd nextjs-auth
 ```
