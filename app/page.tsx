@@ -6,14 +6,15 @@ import { isValidIranPhone, normalizeIranPhone } from "../lib/phone";
 import { useRouter } from "next/navigation";
 import { AuthUser, RandomUsersResponse } from "../types/user";
 import { useState } from "react";
-import { saveUserToStorage } from "@/lib/auth";
 import { apiFetch } from "@/lib/fetcher";
+import { useUser } from "@/hooks/useUser";
 
 export default function LoginPage() {
   const router = useRouter();
   const [phone, setPhone] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const { setUser } = useUser();
 
   async function handleLogin(e?: React.FormEvent) {
     e?.preventDefault();
@@ -38,7 +39,7 @@ export default function LoginPage() {
         picture: r.picture.large,
         phone: normalizeIranPhone(phone),
       };
-      saveUserToStorage(user);
+      setUser(user);
       router.push("/dashboard");
     } catch (err) {
       setError("خطا در برقراری ارتباط با سرور");
