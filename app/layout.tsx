@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./../styles/globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Iran Mobile Login",
   description: "Simple client-side auth demo",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -14,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa">
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-      />
-      <body className="min-h-screen flex items-center justify-center bg-gray-50">
+      <body className="min-h-[100dvh] flex items-center justify-center bg-gray-50">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
