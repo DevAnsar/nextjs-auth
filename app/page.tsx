@@ -1,11 +1,13 @@
 "use client";
+
 import { Input } from "../components/ui/Input";
 import { Button } from "../components/ui/Button";
 import { isValidIranPhone, normalizeIranPhone } from "../lib/phone";
 import { useRouter } from "next/navigation";
-import { AuthUser } from "../types/user";
+import { AuthUser, RandomUsersResponse } from "../types/user";
 import { useState } from "react";
 import { saveUserToStorage } from "@/lib/auth";
+import { apiFetch } from "@/lib/fetcher";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -25,10 +27,11 @@ export default function LoginPage() {
 
     setLoading(true);
     try {
-      const res = await fetch("https://randomuser.me/api/?results=1&nat=us");
-      if (!res.ok) throw new Error("شبکه مشکلی دارد");
-      const data = await res.json();
-      const r = data.results[0];
+      const res = await apiFetch<RandomUsersResponse>(
+        "https://randomuser.me/api/?results=1&nat=us"
+      );
+
+      const r = res.results[0];
       const user: AuthUser = {
         name: `${r.name.first} ${r.name.last}`,
         email: r.email,

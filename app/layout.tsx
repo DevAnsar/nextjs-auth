@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./../styles/globals.css";
+import { AuthProvider } from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Iran Mobile Login",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="fa">
       <body className="min-h-screen flex items-center justify-center bg-gray-50">
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
